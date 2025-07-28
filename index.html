@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metalepsis_ Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons ライブラリの読み込み -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* カスタムCSS */
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #111827; /* ダークグレーの背景 */
+            color: #F3F4F6; /* 明るいグレーのテキスト */
+            overflow-x: hidden;
+        }
+
+        /* GSAPでアニメーションさせる要素の初期状態 */
+        .gsap-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            visibility: hidden;
+        }
+
+        /* スクロールバーのスタイル（任意） */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1F2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4F46E5;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366F1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- ヘッダーナビゲーション -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-gray-900 bg-opacity-80 backdrop-blur-sm shadow-lg">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#top" class="text-2xl font-bold text-white">Metalepsis_</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#news" class="hover:text-indigo-400 transition-colors duration-300">News</a>
+                <a href="#about" class="hover:text-indigo-400 transition-colors duration-300">About</a>
+                <a href="#work" class="hover:text-indigo-400 transition-colors duration-300">Work</a>
+                <a href="#project" class="hover:text-indigo-400 transition-colors duration-300">Project</a>
+                <a href="#contact" class="hover:text-indigo-400 transition-colors duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- TOPセクション (全画面) -->
+        <section id="top" class="h-screen w-full flex flex-col justify-center items-center text-center relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522252234503-e356532cafd5?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="relative z-10 p-4 flex flex-col items-center">
+                <h1 id="main-title" class="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
+                    Welcome to<br>Metalepsis_ site
+                </h1>
+                <p id="sub-title" class="text-lg md:text-xl text-gray-300 max-w-2xl">
+                    烏龍茶と宇宙の矛盾に基づいた100%不安全なサイトです。
+                </p>
+                <!-- Scroll Down インジケーター (レイアウト修正) -->
+                <div id="scroll-indicator" class="mt-16 text-white flex flex-col items-center">
+                    <span class="text-sm bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">Scroll Down</span>
+                    <div class="mt-2 w-6 h-10 border-2 border-white rounded-full mx-auto flex justify-center">
+                        <div id="scroll-dot" class="w-1 h-1 bg-white rounded-full mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News セクション -->
+        <section id="news" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="gsap-reveal text-4xl font-bold text-center mb-12">News</h2>
+                <div class="space-y-8 max-w-3xl mx-auto">
+                    <div class="gsap-reveal p-6 bg-gray-800 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="font-bold text-indigo-400">2025.07.28</div>
+                        <div>サイトを公開しました。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About セクション -->
+        <section id="about" class="py-20 md:py-32 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="gsap-reveal text-4xl font-bold text-center mb-12">About</h2>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                    <div class="gsap-reveal md:w-1/3">
+                        <img src="mikanchan.jpg" alt="[二重らせんヘルシードラゴンの画像]" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover mx-auto shadow-2xl">
+                    </div>
+                    <div class="gsap-reveal md:w-2/3 text-center md:text-left">
+                        <h3 class="text-3xl font-bold mb-4">Metalepsis_</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            はじめまして。Metalepsis_です。<br>
+                            今日は「猿でもわかる私のサイト」をお届けします。<br>
+                            なお、一部に事実と異なる点や過度に美味しい誇張が含まれる場合があります。<br>
+                            苦情は<a href="https://unknownthedeltia.github.io/jinshinbaitaisyokuhinsentar.github.io/" target="_blank">人身売買美味しい加工食品センター苦情課へ。</a>対応は主にマグロが行います。<br>
+                            それでは、さっそく始めましょう！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work セクション -->
+        <section id="work" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="gsap-reveal text-4xl font-bold text-center mb-12">Work</h2>
+                <div class="max-w-3xl mx-auto relative border-l-2 border-indigo-500 pl-10">
+                    <div class="gsap-reveal mb-12">
+                        <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-5 mt-1.5"></div>
+                        <h3 class="text-2xl font-bold">Enth</h3>
+                        <p class="text-indigo-400 mb-2">2021 - Present</p>
+                        <p class="text-gray-400">現在はEnterとdominanceを制作しています。</p>
+                    </div>
+                    <div class="gsap-reveal mb-12">
+                        <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-5 mt-1.5"></div>
+                        <h3 class="text-2xl font-bold">Logo edit</h3>
+                        <p class="text-indigo-400 mb-2">2022 - Present</p>
+                        <p class="text-gray-400">主にTwitterのフォロワーのロゴを制作しています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Project セクション -->
+        <section id="project" class="py-20 md:py-32 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="gsap-reveal text-4xl font-bold text-center mb-12">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="gsap-reveal bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="sui.png" alt="[プロジェクト1の画像]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Npec</h3>
+                            <p class="text-gray-400 mb-4">自由に二次創作を作ることができる作品です。</p>
+                            <a href="https://wikiwiki.jp/npec" class="text-indigo-400 hover:text-indigo-300">View Details &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="gsap-reveal bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="nangminiq.jpeg" alt="[プロジェクト2の画像]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Nangminiq</h3>
+                            <p class="text-gray-400 mb-4">「問い」を元にしてつくった作品です。</p>
+                            <a href="https://wikiwiki.jp/nangminiq" class="text-indigo-400 hover:text-indigo-300">View Details &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="gsap-reveal bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="erdemina.png" alt="[プロジェクト3の画像]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">??????????</h3>
+                            <p class="text-gray-400 mb-4">公開をお待ち下さい。</p>
+                            <a href="404.html" class="text-indigo-400 hover:text-indigo-300">View Details &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact セクション -->
+        <footer id="contact" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="gsap-reveal text-4xl font-bold mb-4">Contact</h2>
+                <p class="gsap-reveal text-gray-400 mb-8">お仕事のご依頼やご相談は、以下のSNSまたはメールにてお気軽にご連絡ください。</p>
+                <!-- SNSアイコン (修正) -->
+                <div class="gsap-reveal flex justify-center space-x-6 mb-8 text-3xl">
+                    <!-- X (Twitter) Icon -->
+                    <a href="https://x.com/Metalepsis_" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="ph-bold ph-x-logo"></i>
+                    </a>
+                    <!-- Instagram Icon -->
+                    <a href="https://instagram.com/_.metalepsis._" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="ph-bold ph-instagram-logo"></i>
+                    </a>
+                    <!-- Discord Icon -->
+                    <a href="https://discord.com/86V2VXjwbM" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                       <i class="ph-bold ph-discord-logo"></i>
+                    </a>
+                    <!-- YouTube Icon -->
+                    <a href="https://youtube.com/Metalepsis_DeltanablA" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="ph-bold ph-youtube-logo"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 mt-8">&copy; 2025 Metalepsis_. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- GSAP ライブラリ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        // GSAPプラグインの登録
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- ページ読み込み時のアニメーション ---
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        tl.from("#main-title", { opacity: 0, y: 30, duration: 1, delay: 0.5 })
+          .from("#sub-title", { opacity: 0, y: 30, duration: 0.8 }, "-=0.6")
+          .from("header", { opacity: 0, y: -50, duration: 1 }, "-=0.8")
+          .from("#scroll-indicator", { opacity: 0, y: 20, duration: 0.8}, "-=0.6"); // Scrollインジケーターもアニメーションに追加
+          
+        // スクロールインジケーターのアニメーション
+        gsap.to("#scroll-dot", {
+            y: 18,
+            repeat: -1,
+            yoyo: true,
+            duration: 1,
+            ease: "power1.inOut"
+        });
+        
+        // --- スクロールトリガーアニメーション ---
+        // .gsap-revealクラスを持つすべての要素を取得
+        const revealElements = gsap.utils.toArray(".gsap-reveal");
+
+        revealElements.forEach((elem) => {
+            gsap.fromTo(elem, 
+                { // fromの状態
+                    autoAlpha: 0, // visibility:hidden と opacity:0 を同時に制御
+                    y: 50
+                }, 
+                { // toの状態
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 85%", // トリガー要素の上端が、ビューポートの下から85%の位置に来たら開始
+                        end: "bottom 20%",
+                        toggleActions: "play none none none", // スクロールインで再生、他は何もしない
+                        // markers: true, // デバッグ用マーカー
+                    }
+                }
+            );
+        });
+
+        // --- スムーススクロール ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
